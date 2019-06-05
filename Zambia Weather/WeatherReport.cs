@@ -15,7 +15,9 @@ namespace Zambia_Weather
         {
             if (InternetWorking())
             {
-                HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@"https://api.openweathermap.org/data/2.5/weather?q=" + city + ",zm&lang=en&units=metric&APPID=" + api_key);
+                HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(@"https://api.openweathermap.org/data/2.5/weather?q="
+                + city + ",zm&lang=en&units=metric&APPID=" + api_key);
+
                 HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse();
 
                 StreamReader jsonStream = new StreamReader(webResponse.GetResponseStream());
